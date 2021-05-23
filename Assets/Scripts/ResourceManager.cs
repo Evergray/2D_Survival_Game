@@ -17,7 +17,7 @@ public class ResourceManager : MonoBehaviour
     public GameObject[] greeneryTiles;
 
     [SerializeField] private Transform resourceHolder;                         
-    private List<Vector3> gridPositions = new List<Vector3>();
+    private List<Vector2> gridPositions = new List<Vector2>();
 
     private void InitialiseList()
     {
@@ -26,7 +26,7 @@ public class ResourceManager : MonoBehaviour
         {
             for (int y = 1; y < rows - 1; y++)
             {
-                gridPositions.Add(new Vector3(x, y, 0f));
+                gridPositions.Add(new Vector2(x, y));
             }
         }
     }
