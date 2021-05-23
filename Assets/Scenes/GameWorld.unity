@@ -451,8 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8604b2c0e0b214c9147e5a491cb94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 10
-  rows: 10
+  columns: 20
+  rows: 20
   stoneCount:
     minimum: 4
     maximum: 10
