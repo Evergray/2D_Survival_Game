@@ -5,7 +5,7 @@ using UnityEngine;
 using utils;
 using Random = UnityEngine.Random;     
 
-public class ResourceManager : MonoBehaviour
+public class ResourceContainerSpawner : MonoBehaviour
 {
     [SerializeField] private int columns = 8;
     [SerializeField] private int rows = 8;                                           
@@ -54,7 +54,7 @@ public class ResourceManager : MonoBehaviour
 
     private void RandomFlipSide(GameObject gameObject)
     {
-        gameObject.GetComponent<SpriteRenderer>().flipX = Random.Range(0, 101) <= 50 ? false : true;
+        gameObject.GetComponent<SpriteRenderer>().flipX = Random.Range(0, 2) < 1 ? false : true;
     }
 
     public void SetupResourcesOnScene()

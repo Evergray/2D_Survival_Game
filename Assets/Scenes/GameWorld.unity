@@ -451,17 +451,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8604b2c0e0b214c9147e5a491cb94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 40
-  rows: 40
+  columns: 10
+  rows: 10
   stoneCount:
-    minimum: 40
-    maximum: 100
+    minimum: 10
+    maximum: 15
   treeCount:
-    minimum: 100
-    maximum: 300
+    minimum: 2
+    maximum: 4
   greeneryCount:
-    minimum: 50
-    maximum: 150
+    minimum: 9
+    maximum: 18
   stoneTiles:
   - {fileID: 3214172424581205749, guid: 5bc41d509517c50499812cd155452180, type: 3}
   - {fileID: 1215726851121285811, guid: d990a0969dd9fd14296a2c9574781bf3, type: 3}

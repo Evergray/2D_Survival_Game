@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private ResourceManager resourceScript;
+    private ResourceContainerSpawner resourceScript;
 
     void Awake()
     {
-        resourceScript = GetComponent<ResourceManager>();
+        resourceScript = GetComponent<ResourceContainerSpawner>();
         InitGame();
     }
 
