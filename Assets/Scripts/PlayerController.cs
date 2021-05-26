@@ -11,19 +11,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     private Animator animator;
     private Vector2 _lookDirection = new Vector2(1, 0);
+    private Player player;
+    
     public Vector2 lookDirection
     {
-        get
-        {
-            return _lookDirection;
-        }
+        get => _lookDirection;
     }
-
-    public static PlayerController player;
 
     private void Awake()
     {
-        player = this;
+        player = Player.player;
+        Debug.Log(player);
     }
 
     private void Start()
@@ -53,13 +51,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2D.position + Vector2.up * 0.2f, 
-                player.lookDirection, 1.5f, LayerMask.GetMask("Actions"));
+                _lookDirection, 1.5f, LayerMask.GetMask("Destructible"));
+            
+            //IDamageable obj = hit.collider.gameObject.GetComponent<Tree>(); hit.collider.gameObject.
             if (hit.collider != null)
             {
-                if (hit.transform != null)
-                {
-                    Destroy(hit.collider.gameObject);
-                }
+                //TODO
+                Debug.Log(hit.collider.gameObject.tag);
+                //hit.collider.gameObject is IDamageable && ((hit.collider.gameObject).TakeDamage(10);
             }
         }
     }
