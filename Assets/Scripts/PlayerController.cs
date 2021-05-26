@@ -49,6 +49,19 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look X", _lookDirection.x);
         animator.SetFloat("Look Y", _lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2D.position + Vector2.up * 0.2f, 
+                player.lookDirection, 1.5f, LayerMask.GetMask("Actions"));
+            if (hit.collider != null)
+            {
+                if (hit.transform != null)
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
