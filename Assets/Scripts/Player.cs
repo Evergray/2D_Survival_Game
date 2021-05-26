@@ -18,15 +18,26 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     private void Awake()
     {
         player = this;
+        durability = 100.0f;
+    }
+    //TODO: 
+    /*
+     * Ñome up with DoSomeThing function...
+     */
+    public void DoSomeThing()
+    {
+        Debug.Log("Do smg....");
     }
 
     public void TakeDamage(float damageTaken)
     {
-        
+        if (durability > damageTaken)
+            durability -= damageTaken;
+        else Destruct();
     }
 
     public void Destruct()
     {
-        
+        Debug.Log("Smertb =(");
     }
 }

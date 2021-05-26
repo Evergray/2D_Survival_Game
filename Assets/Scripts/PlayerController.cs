@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 //TODO
                 Debug.Log(hit.collider.gameObject.tag);
+                player.DoSomeThing();
                 //hit.collider.gameObject is IDamageable && ((hit.collider.gameObject).TakeDamage(10);
             }
         }
