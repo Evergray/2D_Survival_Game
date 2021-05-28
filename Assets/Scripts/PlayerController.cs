@@ -51,15 +51,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2D.position + Vector2.up * 0.2f, 
-                _lookDirection, 1.5f, LayerMask.GetMask("Destructible"));
-            
-            //IDamageable obj = hit.collider.gameObject.GetComponent<Tree>(); hit.collider.gameObject.
+                _lookDirection, 2f, LayerMask.GetMask("Destructible"));
+
             if (hit.collider != null)
             {
-                //TODO
-                Debug.Log(hit.collider.gameObject.tag);
-                player.DoSomeThing();
-                //hit.collider.gameObject is IDamageable && ((hit.collider.gameObject).TakeDamage(10);
+                IDamageable hitObject = hit.collider.gameObject.GetComponent<IDamageable>();
+                if(hitObject != null) player.Damage(hitObject);
             }
         }
     }

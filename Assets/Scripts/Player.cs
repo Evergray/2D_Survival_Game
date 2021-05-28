@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageable, IDestructible
 {
 
+    private float playerDamage = 50;
     public Player():base()
     {
         if(player) return;
@@ -39,5 +40,10 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     public void Destruct()
     {
         Debug.Log("Smertb =(");
+    }
+
+    public void Damage(IDamageable hitObject)
+    {
+        hitObject.TakeDamage(playerDamage);
     }
 }
