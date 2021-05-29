@@ -22,9 +22,14 @@ public class Tree : MonoBehaviour, IDamageable, IDestructible
     public void TakeDamage(float damageTaken)
     {
         if (durability > damageTaken)
+        {
+            animator.SetTrigger("Hit");
             durability -= damageTaken;
-        else 
+        }
+        else
+        {
             animator.SetTrigger("Fade");
+        }
     }
 
     public void Destruct()

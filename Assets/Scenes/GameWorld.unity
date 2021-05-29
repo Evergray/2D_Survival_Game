@@ -320,7 +320,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9831cfcc6cd00c46b70f3d986a9cf22, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 10
   width: 10
-  listOfNoise: []
+  listOfNoises: []
   frequency: 1
 --- !u!4 &1382486092
 Transform:
