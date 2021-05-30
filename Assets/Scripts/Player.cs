@@ -46,4 +46,15 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     {
         hitObject.TakeDamage(playerDamage);
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        ICollectable item = other.gameObject.GetComponent<ICollectable>();
+
+        if (item != null)
+        {
+            //TODO: ложить item в инвентарь
+            item.PickUp();
+        }
+    }
 }

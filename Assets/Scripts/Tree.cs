@@ -7,6 +7,7 @@ public class Tree : MonoBehaviour, IDamageable, IDestructible
 {
     private float _durability;
     private Animator animator;
+    [SerializeField] private GameObject wood;
 
     public float durability {
         get => _durability;
@@ -34,7 +35,8 @@ public class Tree : MonoBehaviour, IDamageable, IDestructible
 
     public void Destruct()
     {
+        Resource resource = wood.GetComponent<Resource>();
+        resource.Spawn(gameObject.transform.position);
         Destroy(gameObject);
-        Debug.Log("Destruct");
     }
 }

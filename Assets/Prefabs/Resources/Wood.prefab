@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4129774783760981198}
   - component: {fileID: 4129774783760981197}
   - component: {fileID: 4129774783760981196}
+  - component: {fileID: 1034074625517276252}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -96,16 +97,32 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034252644, y: -0.017126262}
+  m_Offset: {x: 0.017191172, y: -0.017126292}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.024, y: 1.024}
+    oldSize: {x: 0.85333335, y: 0.85333335}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7495823, y: 0.53264964}
+  m_Size: {x: 0.6301522, y: 0.41321892}
   m_EdgeRadius: 0
+--- !u!114 &1034074625517276252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4129774783760981187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b25ae531f655b840b333f16ef4c5e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: c8415c26d641688429b335680a7d32c8, type: 2}
+  range:
+    minimum: 0
+    maximum: 0
