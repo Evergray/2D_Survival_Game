@@ -687,8 +687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d179c32a669ccac4a929b53c29942b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 10
-  width: 10
+  height: 100
+  width: 100
   listOfNoises: []
   MountainsTiles:
   - {fileID: 11400000, guid: e75fe17118807ff4398ee99f2daf634d, type: 2}
@@ -700,19 +700,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c6e1f0f10351f344a8a47f1c170928cd, type: 2}
   - {fileID: 11400000, guid: aabbd2152ef1cc440acb3e9abf0e9e64, type: 2}
   WaterTiles:
+  - {fileID: 11400000, guid: 0fcf7d86dfd60834cac8b6920ee904ea, type: 2}
+  - {fileID: 11400000, guid: 6bdec69c872893a4db058ef0b4f4248d, type: 2}
+  - {fileID: 11400000, guid: 07c70472796f65b4f89a60df385f1eb8, type: 2}
+  SandTiles:
   - {fileID: 11400000, guid: 4d2d149a2d3cd284287cd20771998f7e, type: 2}
   - {fileID: 11400000, guid: 81e05e08c1ebf194bbba6d2e05d950d0, type: 2}
   - {fileID: 11400000, guid: e6a627f27d4a8c449be8f9e5035a5662, type: 2}
-  frequency: 1.5
-  floorTiles:
-  - {fileID: 106160, guid: 3a1837f6cfc64d448b04c5012a4938b9, type: 3}
-  - {fileID: 137908, guid: b73e951d04cad744db4e787e15c3caa7, type: 3}
-  - {fileID: 125636, guid: 3c4b46b2506586842bf4b8ebe52010ea, type: 3}
-  - {fileID: 177044, guid: 16b6aabc7053dfa41894bacb9de5c508, type: 3}
-  - {fileID: 109612, guid: 5bf1b72944d17004ba2336c2ed396f90, type: 3}
-  - {fileID: 127736, guid: 0059595f98431ad4c9d5584a2a8d4e4a, type: 3}
-  - {fileID: 110520, guid: 8afcdaf376d5bcb4ab0d524a04cad308, type: 3}
-  - {fileID: 110520, guid: 6e76d5e7eec9e1948b7cdad39ffd94d4, type: 3}
+  frequency: 0.06
+  intensity: 0.63
+  offset: {x: 1, y: 1}
 --- !u!4 &1382486092
 Transform:
   m_ObjectHideFlags: 0
