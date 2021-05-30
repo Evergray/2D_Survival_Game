@@ -320,7 +320,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9831cfcc6cd00c46b70f3d986a9cf22, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -527,8 +527,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 10
   width: 10
-  listOfNoise: []
-  frequency: 1
+  listOfNoises: []
+  frequency: 1.5
+  floorTiles:
+  - {fileID: 106160, guid: 3a1837f6cfc64d448b04c5012a4938b9, type: 3}
+  - {fileID: 137908, guid: b73e951d04cad744db4e787e15c3caa7, type: 3}
+  - {fileID: 125636, guid: 3c4b46b2506586842bf4b8ebe52010ea, type: 3}
+  - {fileID: 177044, guid: 16b6aabc7053dfa41894bacb9de5c508, type: 3}
+  - {fileID: 109612, guid: 5bf1b72944d17004ba2336c2ed396f90, type: 3}
+  - {fileID: 127736, guid: 0059595f98431ad4c9d5584a2a8d4e4a, type: 3}
+  - {fileID: 110520, guid: 8afcdaf376d5bcb4ab0d524a04cad308, type: 3}
+  - {fileID: 110520, guid: 6e76d5e7eec9e1948b7cdad39ffd94d4, type: 3}
 --- !u!4 &1382486092
 Transform:
   m_ObjectHideFlags: 0
