@@ -29,6 +29,7 @@ public class LandGenerator : MonoBehaviour
    
     [SerializeField] private float frequency = 0.06f;
     [SerializeField] private float intensity = 0.63f;
+    [SerializeField] private float vignetteIntensity = 0.005f;
     [SerializeField] private Vector2 offset = new Vector2(1f, 1f);
     private void CalcNoise()
     {
@@ -40,7 +41,8 @@ public class LandGenerator : MonoBehaviour
                  nx = (float)x / width - 0.5f;
                  ny = (float)y / height - 0.5f;
                 Vector3Int position = new Vector3Int(x, y, 0);
-                float point = Mathf.PerlinNoise((nx + offset.x) / frequency, (ny + offset.y) / frequency) * intensity;
+                float vignette = 1.0f - new Vector2(width / 2 - x, height / 2 - y).magnitude * vignetteIntensity;
+                float point = Mathf.PerlinNoise((nx + offset.x) / frequency, (ny + offset.y) / frequency) * intensity * vignette;
                 string biom = GetBiomFromPoint(point);
                 pointsToSpawn.Add(position, biom);
             }
