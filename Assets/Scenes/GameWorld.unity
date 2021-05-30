@@ -528,7 +528,6 @@ MonoBehaviour:
   height: 10
   width: 10
   listOfNoises: []
-<<<<<<< HEAD
   frequency: 1.5
   floorTiles:
   - {fileID: 106160, guid: 3a1837f6cfc64d448b04c5012a4938b9, type: 3}
@@ -539,9 +538,6 @@ MonoBehaviour:
   - {fileID: 127736, guid: 0059595f98431ad4c9d5584a2a8d4e4a, type: 3}
   - {fileID: 110520, guid: 8afcdaf376d5bcb4ab0d524a04cad308, type: 3}
   - {fileID: 110520, guid: 6e76d5e7eec9e1948b7cdad39ffd94d4, type: 3}
-=======
-  frequency: 1
->>>>>>> e2bba4803ac5bc5902a5e22cbd7bd47afd34bb23
 --- !u!4 &1382486092
 Transform:
   m_ObjectHideFlags: 0
