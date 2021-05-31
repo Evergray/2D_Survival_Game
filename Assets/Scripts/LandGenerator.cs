@@ -8,11 +8,16 @@ public class LandGenerator : MonoBehaviour
     public int height = 10;
     public int width = 10;
     public List<string> listOfNoises = new List<string>(); // created just for cheking  list in editor
-    public Dictionary<Vector3Int, string> pointsToSpawn = new Dictionary<Vector3Int, string>();
+    public static Dictionary<Vector3Int, string> pointsToSpawn = new Dictionary<Vector3Int, string>();
     public TileBase[] MountainsTiles;
     public TileBase[] ForestTiles;
     public TileBase[] WaterTiles;
     public TileBase[] SandTiles;
+    public const string WATER = "Water";
+    public const string SAND = "Sand";
+    public const string FOREST = "Forest";
+    public const string HILLS = "Hills";
+    public const string MOUNTAINS = "Mountains";
     /*
      * Created Dictionary as Vector3 because .transform.position returns Vector3 instead a Vector2
      * so that we can manage it in code in the future 
@@ -25,12 +30,6 @@ public class LandGenerator : MonoBehaviour
     private float levelOfForest = 0.5f;
     private float levelOfHills = 0.7f;
 
-    private const string WATER = "Water";
-    private const string SAND = "Sand";
-    private const string FOREST = "Forest";
-    private const string HILLS = "Hills";
-    private const string MOUNTAINS = "Mountains";
-   
     [SerializeField] private float frequency = 0.06f;
     [SerializeField] private float intensity = 0.63f;
     [SerializeField] private float vignetteIntensity = 0.005f;

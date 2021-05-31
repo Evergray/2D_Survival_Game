@@ -708,7 +708,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81e05e08c1ebf194bbba6d2e05d950d0, type: 2}
   - {fileID: 11400000, guid: e6a627f27d4a8c449be8f9e5035a5662, type: 2}
   frequency: 0.06
-  intensity: 0.63
+  intensity: 0.83
   vignetteIntensity: 0.005
   offset: {x: 1, y: 1}
 --- !u!4 &1382486092
@@ -837,11 +837,11 @@ MonoBehaviour:
   columns: 10
   rows: 10
   stoneCount:
-    minimum: 10
+    minimum: 13
     maximum: 15
   treeCount:
-    minimum: 2
-    maximum: 4
+    minimum: 8
+    maximum: 15
   greeneryCount:
     minimum: 9
     maximum: 18
