@@ -20,6 +20,10 @@ public class LandGenerator : MonoBehaviour
     private float nx;
     private float ny;
     private Tilemap tilemap;
+    private float levelOfWater = 0.2f;
+    private float levelOfSand = 0.35f;
+    private float levelOfForest = 0.5f;
+    private float levelOfHills = 0.7f;
 
     private const string WATER = "Water";
     private const string SAND = "Sand";
@@ -66,29 +70,34 @@ public class LandGenerator : MonoBehaviour
         switch (biomType)
         {
             case WATER:
-                tile = WaterTiles[Random.Range(0, 1/*WaterTiles.Length*/)]; 
+                tile = GetTile(WaterTiles);
                 break;
             case FOREST:
-                tile = ForestTiles[Random.Range(0, 1/*ForestTiles.Length*/)];
+                tile = GetTile(ForestTiles);
                 break;
             case SAND:
-                tile = SandTiles[Random.Range(0, 1/*SandTiles.Length*/)];
+                tile = GetTile(SandTiles);
                 break;
             default:
-                tile = MountainsTiles[Random.Range(0, 1/*MountainsTiles.Length*/)];
+                tile = GetTile(MountainsTiles);
                 break;       
         }
         return tile;
     }
+
+    private TileBase GetTile(TileBase[] tileArray)
+    {
+        return tileArray[Random.Range(0, 1/* tileArray.Length*/)];
+    }
     private string GetBiomFromPoint (float point)
     {
-        if (point < 0.2f)
+        if (point < levelOfWater)
             return WATER;
-        else if (point < 0.35f)
+        else if (point < levelOfSand)
             return SAND; 
-        else if (point < 0.5f)
+        else if (point < levelOfForest)
             return FOREST; 
-        else if (point < 0.7f)
+        else if (point < levelOfHills)
             return HILLS;
         else
             return MOUNTAINS;
