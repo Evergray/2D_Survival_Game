@@ -22,9 +22,9 @@ public class ResourceContainerSpawner : MonoBehaviour
     private void InitialiseList()
     {
         gridPositions.Clear();
-        for (int x = 1; x < columns - 1; x++)
+        for (float x = 1; x < columns - 1; x += 0.32f)
         {
-            for (int y = 1; y < rows - 1; y++)
+            for (float y = 1; y < rows - 1; y += 0.32f)
             {
                 gridPositions.Add(new Vector2(x, y));
             }
@@ -45,6 +45,9 @@ public class ResourceContainerSpawner : MonoBehaviour
         for (int i = 0; i < objectCount; i++)
         {
             Vector3 randomPosition = RandomPosition();
+            if (LandGenerator.pointsToSpawn[Vector3Int.FloorToInt(randomPosition)] == LandGenerator.WATER)
+                continue;
+
             GameObject tileChoice = objectArray[Random.Range(0, objectArray.Length)];
             GameObject instance = Instantiate(tileChoice, randomPosition, Quaternion.identity) as GameObject;
             RandomFlipSide(instance);
