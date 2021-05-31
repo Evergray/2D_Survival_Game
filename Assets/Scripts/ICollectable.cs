@@ -3,7 +3,8 @@ using UnityEngine;
 
 public interface ICollectable
 {
+    Item item { get; }
     void Spawn(Vector3 position);
 
-    Item PickUp();
+    void PickUp(Item item);
 }

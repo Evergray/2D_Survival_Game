@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b25ae531f655b840b333f16ef4c5e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: c8415c26d641688429b335680a7d32c8, type: 2}
+  _item: {fileID: 11400000, guid: c8415c26d641688429b335680a7d32c8, type: 2}
   range:
-    minimum: 0
-    maximum: 0
+    minimum: 3
+    maximum: 5

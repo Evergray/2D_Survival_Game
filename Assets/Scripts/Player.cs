@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IDamageable, IDestructible
 {
 
     private float playerDamage = 50;
+    //TODO: переменная для теста
+    public Item wood;
+
     public Player():base()
     {
         if(player) return;
@@ -49,12 +53,14 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ICollectable item = other.gameObject.GetComponent<ICollectable>();
+        //TODO: для теста, нужно переделать!!!
+        ICollectable saveItem = other.gameObject.GetComponent<ICollectable>();
+        wood.count += saveItem.item.count;
+        Debug.Log(wood.count);
 
-        if (item != null)
+        if (saveItem != null)
         {
-            //TODO: ложить item в инвентарь
-            item.PickUp();
+            saveItem.PickUp(wood);
         }
     }
 }
