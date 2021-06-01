@@ -116,6 +116,6 @@ public class LandGenerator : MonoBehaviour
 
     private void Update()
     {
-        TileSetup();
+        //TileSetup();
     }
 }

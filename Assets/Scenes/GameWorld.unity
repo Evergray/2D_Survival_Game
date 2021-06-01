@@ -780,6 +780,10 @@ PrefabInstance:
       propertyPath: wood
       value: 
       objectReference: {fileID: 11400000, guid: c8415c26d641688429b335680a7d32c8, type: 2}
+    - target: {fileID: -5084913371136830268, guid: a204541402a639249be24bc1c49095ac, type: 3}
+      propertyPath: stone
+      value: 
+      objectReference: {fileID: 11400000, guid: 28b2ae54e70c1f44e9048cad3c527fee, type: 2}
     - target: {fileID: 6737767301110562341, guid: a204541402a639249be24bc1c49095ac, type: 3}
       propertyPath: m_Name
       value: BillieJean
@@ -1476,8 +1480,8 @@ MonoBehaviour:
   columns: 100
   rows: 100
   stoneCount:
-    minimum: 10
-    maximum: 15
+    minimum: 400
+    maximum: 500
   treeCount:
     minimum: 200
     maximum: 400

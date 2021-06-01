@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   Name: Stone
-  Icon: {fileID: 0}
+  Icon: {fileID: 1558969575930012938, guid: 51c04c7fa0932bd4b8e00be5e4454510, type: 3}
   count: 0
   price: 0

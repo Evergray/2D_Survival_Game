@@ -14,19 +14,18 @@ public class Resource : MonoBehaviour,ICollectable
     }
     private ItemPanel itemPanel;
     [SerializeField] private Count range;
-    private int count;
+    [SerializeField] private int count;
 
     public void Spawn(Vector3 position)
     {
         count = Random.Range(range.minimum, range.maximum + 1);
-        _item.count = count;
         Instantiate(gameObject, position, Quaternion.identity);
     }
 
-    public void PickUp(Item saveItem)
+    public void PickUp()
     {
         itemPanel = (itemPanel == null) ? itemPanel = ItemPanel.instance : itemPanel;
-        if (itemPanel.SetItem(saveItem))
+        if (itemPanel.SetItem(_item, count))
         {
             Destroy(gameObject);
         }

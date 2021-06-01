@@ -10,6 +10,7 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     private float playerDamage = 50;
     //TODO: переменная для теста
     public Item wood;
+    public Item stone;
 
     public Player():base()
     {
@@ -24,6 +25,10 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     {
         player = this;
         durability = 100.0f;
+        
+        //TODO:временное решение
+        wood.count = 0;
+        stone.count = 0;
     }
     //TODO: 
     /*
@@ -53,14 +58,11 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //TODO: для теста, нужно переделать!!!
         ICollectable saveItem = other.gameObject.GetComponent<ICollectable>();
-        wood.count += saveItem.item.count;
-        Debug.Log(wood.count);
 
         if (saveItem != null)
         {
-            saveItem.PickUp(wood);
+            saveItem.PickUp();
         }
     }
 }
