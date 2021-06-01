@@ -7,10 +7,14 @@ public class LandGenerator : MonoBehaviour
 {
     public int height = 10;
     public int width = 10;
-    public List<string> listOfNoises = new List<string>(); // created just for cheking  list in editor
     public static Dictionary<Vector3Int, string> pointsToSpawn = new Dictionary<Vector3Int, string>();
+   /*
+   * Created Dictionary as Vector3 because .transform.position returns Vector3 instead a Vector2
+   * so that we can manage it in code in the future 
+   */
     public TileBase[] MountainsTiles;
     public TileBase[] ForestTiles;
+    public TileBase[] GrassTiles;
     public TileBase[] WaterTiles;
     public TileBase[] DeepWaterTiles;
     public TileBase[] SandTiles;
@@ -18,19 +22,18 @@ public class LandGenerator : MonoBehaviour
     public const string WATER = "Water";
     public const string SAND = "Sand";
     public const string FOREST = "Forest";
+    public const string GRASS = "Grass";
     public const string HILLS = "Hills";
     public const string MOUNTAINS = "Mountains";
-    /*
-     * Created Dictionary as Vector3 because .transform.position returns Vector3 instead a Vector2
-     * so that we can manage it in code in the future 
-     */
+  
     private float nx;
     private float ny;
     private Tilemap tilemap;
     private float levelOfDeepWater = 0.1f;
     private float levelOfWater = 0.2f;
     private float levelOfSand = 0.35f;
-    private float levelOfForest = 0.5f;
+    private float levelOfGrass = 0.45f;
+    private float levelOfForest = 0.6f;
     private float levelOfHills = 0.7f;
 
     [SerializeField] private float frequency = 0.06f;
@@ -79,6 +82,9 @@ public class LandGenerator : MonoBehaviour
                 break;
             case FOREST:
                 tile = GetTile(ForestTiles);
+                break; 
+            case GRASS:
+                tile = GetTile(GrassTiles);
                 break;
             case SAND:
                 tile = GetTile(SandTiles);
@@ -90,7 +96,7 @@ public class LandGenerator : MonoBehaviour
         return tile;
     }
 
-    private TileBase GetTile(TileBase[] tileArray) => tileArray[Random.Range(0, 1/*tileArray.Length*/)];
+    private TileBase GetTile(TileBase[] tileArray) => tileArray[Random.Range(0, tileArray.Length)];
     private string GetBiomFromPoint (float point)
     {
         if (point < levelOfDeepWater)
@@ -99,6 +105,8 @@ public class LandGenerator : MonoBehaviour
             return WATER;  
         else if (point < levelOfSand)
             return SAND; 
+        else if (point < levelOfGrass)
+            return GRASS;  
         else if (point < levelOfForest)
             return FOREST; 
         else if (point < levelOfHills)
@@ -116,6 +124,6 @@ public class LandGenerator : MonoBehaviour
 
     private void Update()
     {
-        //TileSetup();
+       // TileSetup();
     }
 }

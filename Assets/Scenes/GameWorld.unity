@@ -448,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 9.68, y: 4.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -794,11 +794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737767301110562346, guid: a204541402a639249be24bc1c49095ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.68
       objectReference: {fileID: 0}
     - target: {fileID: 6737767301110562346, guid: a204541402a639249be24bc1c49095ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.65
       objectReference: {fileID: 0}
     - target: {fileID: 6737767301110562346, guid: a204541402a639249be24bc1c49095ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1120,27 +1120,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 100
   width: 100
-  listOfNoises: []
   MountainsTiles:
   - {fileID: 11400000, guid: e75fe17118807ff4398ee99f2daf634d, type: 2}
   - {fileID: 11400000, guid: 5c142ef29c845ad4992f3d3c9787a3d5, type: 2}
   - {fileID: 11400000, guid: e7ec4c1ab547a7943b314a4b3dda526c, type: 2}
   ForestTiles:
-  - {fileID: 11400000, guid: ce13374da12a68940a223eda322e9570, type: 2}
-  - {fileID: 11400000, guid: e6bee16daed8bc74aa9c9569ba0f7383, type: 2}
-  - {fileID: 11400000, guid: c6e1f0f10351f344a8a47f1c170928cd, type: 2}
+  - {fileID: 11400000, guid: 6df30a7cd8b12bf4188c2fc3cf1c72c2, type: 2}
+  - {fileID: 11400000, guid: 463eed559077497448689d22a2eb7efb, type: 2}
+  - {fileID: 11400000, guid: 30ec4c869d6bfdf4b938c4324739e443, type: 2}
+  - {fileID: 11400000, guid: 5b36a078f6a0ad54484e6a4f9926f2b7, type: 2}
+  GrassTiles:
   - {fileID: 11400000, guid: aabbd2152ef1cc440acb3e9abf0e9e64, type: 2}
+  - {fileID: 11400000, guid: c6e1f0f10351f344a8a47f1c170928cd, type: 2}
+  - {fileID: 11400000, guid: e6bee16daed8bc74aa9c9569ba0f7383, type: 2}
+  - {fileID: 11400000, guid: ce13374da12a68940a223eda322e9570, type: 2}
   WaterTiles:
   - {fileID: 11400000, guid: 0fcf7d86dfd60834cac8b6920ee904ea, type: 2}
+  DeepWaterTiles:
   - {fileID: 11400000, guid: 6bdec69c872893a4db058ef0b4f4248d, type: 2}
-  - {fileID: 11400000, guid: 07c70472796f65b4f89a60df385f1eb8, type: 2}
   SandTiles:
   - {fileID: 11400000, guid: 4d2d149a2d3cd284287cd20771998f7e, type: 2}
   - {fileID: 11400000, guid: 81e05e08c1ebf194bbba6d2e05d950d0, type: 2}
-  - {fileID: 11400000, guid: e6a627f27d4a8c449be8f9e5035a5662, type: 2}
-  frequency: 0.06
-  intensity: 0.63
-  vignetteIntensity: 0.005
+  frequency: 0.21
+  intensity: 0.96
+  vignetteIntensity: 0.009
   offset: {x: 1, y: 1}
 --- !u!4 &1382486092
 Transform:
@@ -1428,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517284437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 9.68, y: 4.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 132537937}
