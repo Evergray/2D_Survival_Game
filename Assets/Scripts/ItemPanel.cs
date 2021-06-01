@@ -28,11 +28,29 @@ public class ItemPanel : MonoBehaviour
         maxCount = itemCells.Count;
     }
 
-    public bool SetItem(Item item)
+    public bool SetItem(Item item, int count)
     {
         if (itemsCount < maxCount)
         {
-            itemCells[itemsCount].DrawItem(item.Icon, item.count.ToString());
+            item.count += count;
+            ItemCell _itemCell = null;
+            for (int i = 0; i < itemsCount; i++)
+            {
+                if (itemCells[i].type == item.name)
+                {
+                    _itemCell = itemCells[i];
+                    break;
+                }
+            }
+
+            if (_itemCell == null)
+            {
+                _itemCell = itemCells[itemsCount];
+                _itemCell.type = item.name;
+                itemsCount++;
+            }
+
+            _itemCell.DrawItem(item.Icon, item.count.ToString());
             return true;
         }
         return false;

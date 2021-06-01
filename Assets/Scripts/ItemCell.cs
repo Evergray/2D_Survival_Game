@@ -8,6 +8,7 @@ public class ItemCell : MonoBehaviour
 {
     [SerializeField]private Image itemImage;
     [SerializeField]private Text itemText;
+    public String type;
 
     public void DrawItem(Sprite sprite, String text)
     {
