@@ -45,7 +45,8 @@ public class ResourceContainerSpawner : MonoBehaviour
         for (int i = 0; i < objectCount; i++)
         {
             Vector3 randomPosition = RandomPosition();
-            if (LandGenerator.pointsToSpawn[Vector3Int.FloorToInt(randomPosition)] == LandGenerator.WATER)
+            string tileType = LandGenerator.pointsToSpawn[Vector3Int.FloorToInt(randomPosition)];
+            if (tileType == LandGenerator.WATER || tileType == LandGenerator.DEEPWATER)
                 continue;
 
             GameObject tileChoice = objectArray[Random.Range(0, objectArray.Length)];

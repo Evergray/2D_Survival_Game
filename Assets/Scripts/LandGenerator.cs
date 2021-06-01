@@ -12,7 +12,9 @@ public class LandGenerator : MonoBehaviour
     public TileBase[] MountainsTiles;
     public TileBase[] ForestTiles;
     public TileBase[] WaterTiles;
+    public TileBase[] DeepWaterTiles;
     public TileBase[] SandTiles;
+    public const string DEEPWATER = "DeepWater";
     public const string WATER = "Water";
     public const string SAND = "Sand";
     public const string FOREST = "Forest";
@@ -25,6 +27,7 @@ public class LandGenerator : MonoBehaviour
     private float nx;
     private float ny;
     private Tilemap tilemap;
+    private float levelOfDeepWater = 0.1f;
     private float levelOfWater = 0.2f;
     private float levelOfSand = 0.35f;
     private float levelOfForest = 0.5f;
@@ -71,6 +74,9 @@ public class LandGenerator : MonoBehaviour
             case WATER:
                 tile = GetTile(WaterTiles);
                 break;
+            case DEEPWATER:
+                tile = GetTile(DeepWaterTiles);
+                break;
             case FOREST:
                 tile = GetTile(ForestTiles);
                 break;
@@ -84,14 +90,13 @@ public class LandGenerator : MonoBehaviour
         return tile;
     }
 
-    private TileBase GetTile(TileBase[] tileArray)
-    {
-        return tileArray[Random.Range(0, 1/* tileArray.Length*/)];
-    }
+    private TileBase GetTile(TileBase[] tileArray) => tileArray[Random.Range(0, 1/*tileArray.Length*/)];
     private string GetBiomFromPoint (float point)
     {
-        if (point < levelOfWater)
-            return WATER;
+        if (point < levelOfDeepWater)
+            return DEEPWATER;
+        else if (point < levelOfWater)
+            return WATER;  
         else if (point < levelOfSand)
             return SAND; 
         else if (point < levelOfForest)
