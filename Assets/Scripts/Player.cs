@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,13 +19,18 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
     }
     
     public float durability { get; set; }
+    private float maxDurability;
+    bool isInvincible = false;
+    float invincibleTimer;
+    float timeInvincible = 1f;
 
     public static Player player;
 
     private void Awake()
     {
         player = this;
-        durability = 100.0f;
+        maxDurability = 100.0f;
+        durability = maxDurability;
         
         //TODO:временное решение
         wood.count = 0;
@@ -39,11 +45,33 @@ public class Player : MonoBehaviour, IDamageable, IDestructible
         Debug.Log("Do smg....");
     }
 
+    private void Update()
+    {
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0) {isInvincible = false; }
+        }
+    }
+
     public void TakeDamage(float damageTaken)
     {
+        if (isInvincible) return;
+        
         if (durability > damageTaken)
+        {
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+            
             durability -= damageTaken;
-        else Destruct();
+            Debug.Log("durability/maxDurability " + durability/maxDurability);
+            HealthBar.instance.SetValue(durability/maxDurability);
+        }
+        else
+        {
+            HealthBar.instance.SetValue(0);
+            Destruct();
+        }
     }
 
     public void Destruct()
