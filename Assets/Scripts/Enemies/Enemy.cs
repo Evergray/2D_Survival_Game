@@ -11,6 +11,7 @@ namespace Enemies
         public float speedRate = 1f;
 
         private float _durability;
+        public Rigidbody2D rigidBody;
         public  float durability
         {
             get => _durability;
@@ -19,7 +20,8 @@ namespace Enemies
 
         public virtual void Attack()
         {
-            Debug.Log("Vkysno");
+            Player.player.TakeDamage(damageAmount);
+            Debug.Log("Player dmg");
         }
         public virtual void Destruct()
         {
@@ -30,7 +32,14 @@ namespace Enemies
         public virtual void TakeDamage(float damageTaken)
         {
             if (_durability > damageTaken)
+            {
+                //TODO: Сделать отталкивание от плеера при получении урона
+                /*Vector2 lookDirection = (transform.position - Player.player.transform.position);
+                rigidBody.AddForce(lookDirection * 200, ForceMode2D.Impulse);*/
                 _durability -= damageTaken;
+            }
+                
+            
             else Destruct();
         }
     }

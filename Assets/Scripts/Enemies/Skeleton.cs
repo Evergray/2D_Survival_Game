@@ -9,7 +9,6 @@ namespace Enemies
     {
         private Vector2 lookDirection;
         private bool playerIsOnSight = false;
-        private Rigidbody2D rigidBody;
         public override void TakeDamage(float damageTaken)
         {
             base.TakeDamage(damageTaken);
@@ -26,7 +25,7 @@ namespace Enemies
 
         private void Awake()
         {
-            durability = 30f;
+            durability = 900330f;
             damageType = "Melee";
             damageAmount = 2f;
             speedRate = 2f;

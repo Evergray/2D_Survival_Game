@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         resourceScript = GetComponent<ResourceContainerSpawner>();
+        Application.targetFrameRate = 60;
         InitGame();
     }
 
